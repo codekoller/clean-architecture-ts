@@ -5,11 +5,6 @@ export class AccountEntity {
   public readonly id: string;
   public props: Required<AccountProps>;
   private constructor(props: AccountProps, id?: string) {
-    if (!props) {
-      //@ts-expect-error used for ORM
-      this.props = {};
-      return;
-    }
     this.id = id || randomUUID();
     this.props = {
       ...props,
@@ -20,12 +15,20 @@ export class AccountEntity {
     return new AccountEntity(props, id);
   }
 
+  updateName(name: string) {
+    this.name = name;
+  }
+
   get name() {
     return this.props.name;
   }
 
   private set name(value: string) {
     this.props.name = value;
+  }
+
+  updateSurname(surname: string) {
+    this.surname = surname;
   }
 
   get surname() {
@@ -36,12 +39,20 @@ export class AccountEntity {
     this.props.surname = value;
   }
 
+  updateEmail(email: string) {
+    this.email = email;
+  }
+
   get email() {
     return this.props.email;
   }
 
   private set email(value: string) {
     this.props.email = value;
+  }
+
+  updatePassword(password: string) {
+    this.password = password;
   }
 
   get password() {
