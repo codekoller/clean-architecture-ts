@@ -16,6 +16,6 @@ describe('EnvironmentConfigService', () => {
 
   it('should be get database uri', () => {
     const databaseUri = service.getDatabaseUri();
-    expect(databaseUri).toStrictEqual('mongodb://test');
+    expect(databaseUri).toStrictEqual('mongodb://clean-arch-mongodb:27017');
   });
 });
