@@ -48,4 +48,19 @@ describe('AccountRepository ', () => {
     await accountMongoDbRepository.add(account);
     expect(spy).toBeCalled();
   });
+
+  it('should be called find all accounts', async () => {
+    const output = {
+      id: 'any_id',
+      name: 'any_name',
+      surname: 'any_surname',
+      email: 'any_email@mail.com',
+      password: 'any_password',
+      createdAt: new Date('2022-12-10'),
+      updatedAt: new Date('2022-12-10'),
+    };
+    const spy = jest.spyOn(mockAccountModel, 'find').mockResolvedValue([output]);
+    await accountMongoDbRepository.find();
+    expect(spy).toBeCalled()
+  });
 });
