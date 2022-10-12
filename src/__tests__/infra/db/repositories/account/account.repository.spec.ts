@@ -4,6 +4,7 @@ import { AccountModel } from '@app/infra/db/models/account/account.model';
 import { AccountMongoDBRepository } from '@app/infra/db/repositories/account/account-mongodb.repository';
 import { getModelToken } from '@nestjs/mongoose';
 import { Test } from '@nestjs/testing';
+import { randomUUID } from 'crypto';
 import { Model } from 'mongoose';
 
 describe('AccountRepository ', () => {
@@ -59,8 +60,10 @@ describe('AccountRepository ', () => {
       createdAt: new Date('2022-12-10'),
       updatedAt: new Date('2022-12-10'),
     };
-    const spy = jest.spyOn(mockAccountModel, 'find').mockResolvedValue([output]);
+    const spy = jest
+      .spyOn(mockAccountModel, 'find')
+      .mockResolvedValue([output]);
     await accountMongoDbRepository.find();
-    expect(spy).toBeCalled()
+    expect(spy).toBeCalled();
   });
 });
