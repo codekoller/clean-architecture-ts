@@ -15,9 +15,9 @@ describe('EnvironmentConfigService', () => {
   });
 
   it('should be get database uri', () => {
-    const databaseUri = service.getDatabaseUri();
-    expect(databaseUri).toStrictEqual(
-      'mongodb://clean-arch-mongodb:27017/clean-arch-database',
-    );
+    const result = service.getDatabaseUri();
+    jest.spyOn(service, 'getDatabaseUri').mockImplementation(() => result);
+
+    expect(service.getDatabaseUri()).toBe(result);
   });
 });
