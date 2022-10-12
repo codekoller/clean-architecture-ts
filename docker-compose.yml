@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  clean-arch-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: clean-arch-api
+    entrypoint: sh -c 'yarn install && yarn start:dev'
+    env_file:
+      - .env
+    volumes:
+      - .:/app/
+      - /app/node_modules/
+    ports:
+      - ${PORT}:${PORT}
+    networks:
+      - clean-arch-net
+  clean-arch-mongodb:
+    image: mongo:latest
+    container_name: clean-arch-mongodb
+    environment:
+      MONGODB_URI: ${MONGODB_URI}
+    volumes:
+      - mongodb-data/data/db
+    ports:
+      - ${MONGODB_PORT}:${MONGODB_PORT}
+    networks:
+      - clean-arch-net
+
+networks:
+  clean-arch-net:
+
+volumes:
+  mongodb-data:
