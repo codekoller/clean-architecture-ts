@@ -6,6 +6,7 @@ module.exports = {
     '!<rootDir>/src/app.module.ts',
     '!<rootDir>/src/infra/config/environment-config/environment-config.module.ts',
     '!<rootDir>/src/infra/config/mongoose/**',
+    '!<rootDir>/src/infra/db/repositories/repositories.module.ts',
   ],
   coverageDirectory: 'coverage',
   testEnvironment: 'node',
