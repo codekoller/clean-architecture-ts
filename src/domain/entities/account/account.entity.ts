@@ -1,7 +1,7 @@
 import { randomUUID } from 'crypto';
 import { AccountProps } from './account-props.type';
 
-export class AccountEntity {
+export class Account {
   public readonly id: string;
   public props: Required<AccountProps>;
   private constructor(props: AccountProps, id?: string) {
@@ -11,8 +11,8 @@ export class AccountEntity {
     };
   }
 
-  static create(props: AccountProps, id?: string): AccountEntity {
-    return new AccountEntity(props, id);
+  static create(props: AccountProps, id?: string): Account {
+    return new Account(props, id);
   }
 
   updateName(name: string) {
