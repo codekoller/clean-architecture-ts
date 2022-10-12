@@ -1,16 +1,15 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { randomUUID } from 'crypto';
 import { Document } from 'mongoose';
 
 @Schema({
   autoIndex: true,
   collection: 'accounts',
   timestamps: true,
+  id: true,
 })
 export class AccountModel extends Document {
   @Prop({
     type: String,
-    default: () => randomUUID(),
   })
   id!: string;
 

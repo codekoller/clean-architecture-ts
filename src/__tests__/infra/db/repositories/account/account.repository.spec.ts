@@ -46,7 +46,6 @@ describe('AccountRepository ', () => {
     const account = Account.create(accountProps);
     const spy = jest.spyOn(mockAccountModel, 'create').mockReturnValue();
     await accountMongoDbRepository.add(account);
-    expect(account.id).toBeDefined();
     expect(spy).toBeCalled();
   });
 
