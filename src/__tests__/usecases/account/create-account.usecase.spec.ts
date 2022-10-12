@@ -11,9 +11,9 @@ describe('CreateAccountUseCase Test', () => {
       email: 'any_email@mail.com',
       password: 'any_password',
     });
-    expect(repository.acccounts).toHaveLength(1);
+    expect(repository.accounts).toHaveLength(1);
     expect(output).toStrictEqual({
-      id: repository.acccounts[0].id,
+      id: repository.accounts[0].id,
       name: 'any_name',
       surname: 'any_surname',
       email: 'any_email@mail.com',

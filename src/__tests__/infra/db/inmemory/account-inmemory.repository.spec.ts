@@ -13,8 +13,8 @@ describe('AccountInMemoryRepository Test', () => {
     };
     const account = Account.create(accountProps);
     await repository.add(account);
-    expect(repository.acccounts).toHaveLength(1);
-    expect(repository.acccounts).toStrictEqual([account]);
+    expect(repository.accounts).toHaveLength(1);
+    expect(repository.accounts).toStrictEqual([account]);
   });
 
   it('should be find all accounts', async () => {
@@ -28,7 +28,7 @@ describe('AccountInMemoryRepository Test', () => {
     const account = Account.create(accountProps);
     await repository.add(account);
     await repository.find();
-    expect(repository.acccounts).toHaveLength(1);
-    expect(repository.acccounts).toStrictEqual([account]);
+    expect(repository.accounts).toHaveLength(1);
+    expect(repository.accounts).toStrictEqual([account]);
   });
 });
