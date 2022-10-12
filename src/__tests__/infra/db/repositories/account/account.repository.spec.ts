@@ -4,7 +4,6 @@ import { AccountModel } from '@app/infra/db/models/account/account.model';
 import { AccountMongoDBRepository } from '@app/infra/db/repositories/account/account-mongodb.repository';
 import { getModelToken } from '@nestjs/mongoose';
 import { Test } from '@nestjs/testing';
-import { randomUUID } from 'crypto';
 import { Model } from 'mongoose';
 
 describe('AccountRepository ', () => {
