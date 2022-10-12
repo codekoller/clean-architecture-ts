@@ -14,9 +14,8 @@ describe('EnvironmentConfigService', () => {
     expect(service).toBeDefined();
   });
 
-  it('should be get database uri is false or true', () => {
+  it('should be get database uri', () => {
     const databaseUri = service.getDatabaseUri();
-    expect(!databaseUri).toEqual(false);
-    expect(!!databaseUri).toEqual(true);
+    expect(databaseUri.length).toBe(34);
   });
 });
