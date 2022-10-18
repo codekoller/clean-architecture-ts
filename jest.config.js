@@ -5,6 +5,8 @@ module.exports = {
     '!<rootDir>/src/main.ts',
     '!<rootDir>/src/app.module.ts',
     '!<rootDir>/src/infra/config/environment-config/environment-config.module.ts',
+    '!<rootDir>/src/infra/exceptions/exceptions.module.ts',
+    '!<rootDir>/src/infra/logger/logger.module.ts',
     '!<rootDir>/src/infra/config/mongoose/**',
     '!<rootDir>/src/infra/db/repositories/repositories.module.ts',
   ],
